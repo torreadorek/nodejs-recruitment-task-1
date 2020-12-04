@@ -23,7 +23,7 @@ authorization-token: a5c9700a-684e-11ea-bc55-0242ac130003
 
 POST /internal/users
 
-http://176.107.131.27:8000/public/logs?from=1584969746817&to=1584969759222
+http://176.107.131.27:8000/internal/users
 
 header:
 
