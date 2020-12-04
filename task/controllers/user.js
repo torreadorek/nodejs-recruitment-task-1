@@ -6,7 +6,6 @@ module.exports = {
         try{
             const token = req.header('authorization-token')
             const {username} = req.body
-            const permissions = ['create','read']
             const admin = await User.findOne({
                 where:{
                     token,
