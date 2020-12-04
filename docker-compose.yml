@@ -1,0 +1,26 @@
+version: "3.8"
+
+services: 
+  node:
+    build: ./task
+    volumes: 
+      - ./task:/task
+      - /task/node_modules/
+    ports: 
+      - 7000:8080
+    env_file: 
+      - ./task/config/.env
+    environment:
+      - DB_HOST=db 
+      - NODE_ENV=test
+    depends_on: 
+      - db
+  
+  db:
+    image: mysql:8
+    container_name: db
+    ports: 
+      - 3306:3306
+    environment: 
+      - MYSQL_ROOT_PASSWORD=task
+    
